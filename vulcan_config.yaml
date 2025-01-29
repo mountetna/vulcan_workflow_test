@@ -1,0 +1,27 @@
+- display: "First Poem to count"
+  ui_component: "string"
+  output:
+    params: ["poem"]
+
+- display: "Second Poem to count"
+  ui_component: "string"
+  output:
+    params: ["poem_2"]
+
+- display: "count selector to perform on files"
+  name: "ui_count_method"
+  ui_component: "dropdown"
+  input:
+    files: ["method_options.txt"]
+  output:
+    files: ["count_method.txt"]
+
+- display: "Count from poem"
+  ui_component: "raw"
+  output:
+    files: ["count_poem.txt"]
+
+- display: "Count from poem2"
+  ui_component: "raw"
+  output:
+    files: ["count_poem_2.txt"]

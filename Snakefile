@@ -1,6 +1,3 @@
-include: "rules/core.smk"
-include: "rules/summary-ui.smk"
-
 configfile: "config.yaml"
 
 rule all:

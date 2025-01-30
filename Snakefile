@@ -5,7 +5,7 @@ rule all:
         ["output/count_poem.txt", "output/count_poem_2.txt"]
 
 rule build_method_options:
-    input:
+    params:
         poem1=config["poem"],
         poem2=config["poem_2"]
     output:
@@ -23,9 +23,10 @@ rule ui_count_method:
         "output/count_method.txt"
 
 rule count:
-    input:
+    params:
         poem1=config["poem"],
         poem2=config["poem_2"],
+    input:
         count_method="output/count_method.txt"
     output:
         poem_count="output/count_poem.txt",
@@ -42,6 +43,6 @@ rule count:
         else
             wc_option="-w"
         fi
-        echo {input.poem1} | wc $wc_option | awk '{{print $1}}' > {output.poem_count}
-        echo {input.poem2} | wc $wc_option | awk '{{print $1}}' > {output.poem_count_2}
+        echo {params.poem1} | wc $wc_option | awk '{{print $1}}' > {output.poem_count}
+        echo {params.poem2} | wc $wc_option | awk '{{print $1}}' > {output.poem_count_2}
         """

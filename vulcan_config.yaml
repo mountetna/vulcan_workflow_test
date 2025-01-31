@@ -18,10 +18,10 @@
 
 - display: "Count from poem"
   ui_component: "raw"
-  output:
+  input:
     files: ["count_poem.txt"]
 
 - display: "Count from poem2"
   ui_component: "raw"
-  output:
+  input:
     files: ["count_poem_2.txt"]

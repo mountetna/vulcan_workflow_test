@@ -12,7 +12,7 @@ rule build_method_options:
         opts="output/method_options.txt"
     shell:
         """
-        echo "[\"bytes\", \"chars\", \"words\"]" > {output.opts}
+        echo "[\\"bytes\\", \\"chars\\", \\"words\\"]" > {output.opts}
         """
 
 # For UI elements that produce outputs used in a snakemake step, we just specify the input/output, so snakemake can infer the dag

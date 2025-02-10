@@ -1,9 +1,9 @@
-- display: "1__Poems__First Poem"
+- display: "Poems__First Poem"
   ui_component: "string"
   output:
     params: ["poem"]
 
-- display: "1__Poems__Second Poem"
+- display: "Poems__Second Poem"
   ui_component: "string"
   output:
     params: ["poem_2"]

@@ -1,16 +1,19 @@
 - display: "Poems__First Poem"
   ui_component: "string"
+  doc: "text of the first poem"
   output:
     params: ["poem"]
 
 - display: "Poems__Second Poem"
   ui_component: "string"
+  doc: "text of the second poem"
   output:
     params: ["poem_2"]
 
 - display: "count selector to perform on files"
   name: "ui_count_method"
   ui_component: "dropdown"
+  doc: "Select what to count"
   input:
     files: ["method_options.txt"]
   output:

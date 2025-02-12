@@ -1,6 +1,7 @@
 - display: "Poems__First Poem"
   ui_component: "string"
   doc: "text of the first poem"
+  default: "hello hello!"
   output:
     params: ["poem"]
 

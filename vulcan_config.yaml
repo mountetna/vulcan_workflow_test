@@ -14,6 +14,7 @@
   name: "ui_count_method"
   ui_component: "dropdown"
   doc: "Select what to count"
+  default: "chars"
   input:
     files: ["method_options.txt"]
   output:

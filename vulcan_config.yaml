@@ -30,3 +30,8 @@
   ui_component: "raw"
   input:
     files: ["count_poem_2.txt"]
+
+- display: "Plot"
+  ui_component: "plot"
+  input:
+    files: ["barplot.png"]

@@ -13,6 +13,8 @@ rule build_method_options:
     shell:
         """
         echo "[\\"bytes\\", \\"chars\\", \\"words\\"]" > {output.opts}
+
+        echo "Intentional Erroring" >&2
         exit 1
         """
 

@@ -46,3 +46,14 @@ rule count:
         echo {params.poem1} | wc $wc_option | awk '{{print $1}}' > {output.poem_count}
         echo {params.poem2} | wc $wc_option | awk '{{print $1}}' > {output.poem_count_2}
         """
+
+rule copy_plot_after_counting:
+    input:
+        ["output/count_poem.txt", "output/count_poem_2.txt"]
+    output:
+        plot="output/barplot.png"
+    shell:
+        """
+        cp barplot.png {output.plot}
+        """
+

@@ -30,3 +30,8 @@
   ui_component: "raw"
   input:
     files: ["count_poem_2.txt"]
+
+- display: "Download First Poem Count"
+  ui_component: "link"
+  input:
+    files: ["count_poem_2.txt"]

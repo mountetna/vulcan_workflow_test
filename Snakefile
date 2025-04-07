@@ -2,7 +2,7 @@ configfile: "config.yaml"
 
 rule all:
     input:
-        ["output/count_poem.txt", "output/count_poem_2.txt"]
+        ["output/count_poem.txt", "output/count_poem_2.txt", "output/count_method.txt"]
 
 rule build_method_options:
     params:
@@ -21,14 +21,15 @@ rule build_method_options:
         """
 
 rule ui_viz:
-    input:
-        data_frame="output/discrete_metadata_summary.json",
-        continuous_opts="output/continuous_opts.json",
-        discrete_opts="output/discrete_opts.json",
-        all_opts="output/all_opts.json",
-        reduction_opts="output/reduction_opts.json"
+    input: [
+        "output/discrete_metadata_summary.json",
+        "output/continuous_opts.json",
+        "output/discrete_opts.json",
+        "output/all_opts.json",
+        "output/reduction_opts.json"
+    ]
     output:
-        plot_setup="output/plot_setup.json"
+        "output/plot_setup.json"
 
 # For UI elements that produce outputs used in a snakemake step, we just specify the input/output, so snakemake can infer the dag
 rule ui_count_method:

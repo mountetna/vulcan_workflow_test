@@ -36,7 +36,6 @@ rule ui_count_method:
         "output/method_options.txt"
     output:
         "output/count_method.txt"
-    shell:
 
 rule count:
     params:

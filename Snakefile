@@ -2,7 +2,7 @@ configfile: "config.yaml"
 
 rule all:
     input:
-        ["output/count_poem.txt", "output/count_poem_2.txt", "output/count_method.txt"]
+        ["output/count_poem.txt", "output/count_poem_2.txt", "output/plot_setup.json"]
 
 rule build_method_options:
     params:

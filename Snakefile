@@ -15,6 +15,16 @@ rule build_method_options:
         echo "[\\"bytes\\", \\"chars\\", \\"words\\"]" > {output.opts}
         """
 
+rule ui_viz:
+    input:
+        data_frame: "output/discrete_metadata_summary.json"
+        continuous_opts: "output/continuous_opts.json"
+        discrete_opts: "output/discrete_opts.json"
+        all_opts: "output/all_opts.json"
+        reduction_opts: "output/reduction_opts.json"
+    output:
+        plot_setup: "output/plot_setup.json"
+
 # For UI elements that produce outputs used in a snakemake step, we just specify the input/output, so snakemake can infer the dag
 rule ui_count_method:
     input:

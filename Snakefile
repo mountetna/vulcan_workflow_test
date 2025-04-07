@@ -21,13 +21,12 @@ rule build_method_options:
         """
 
 rule ui_viz:
-    input: [
+    input: 
         "output/discrete_metadata_summary.json",
         "output/continuous_opts.json",
         "output/discrete_opts.json",
         "output/all_opts.json",
         "output/reduction_opts.json"
-    ]
     output:
         "output/plot_setup.json"
 

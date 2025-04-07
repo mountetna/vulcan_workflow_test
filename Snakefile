@@ -9,7 +9,12 @@ rule build_method_options:
         poem1=config["poem"],
         poem2=config["poem_2"]
     output:
-        opts="output/method_options.txt"
+        opts="output/method_options.txt",
+        data_frame: "output/discrete_metadata_summary.json",
+        continuous_opts: "output/continuous_opts.json",
+        discrete_opts: "output/discrete_opts.json",
+        all_opts: "output/all_opts.json",
+        reduction_opts: "output/reduction_opts.json"
     shell:
         """
         echo "[\\"bytes\\", \\"chars\\", \\"words\\"]" > {output.opts}

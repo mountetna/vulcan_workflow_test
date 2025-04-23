@@ -18,7 +18,7 @@
   default: "chars"
   input:
     preset:
-      options: ["bytes", "counts", "words"]
+      options: ["bytes", "chars", "words"]
   output:
     params: ["count_method"]
 

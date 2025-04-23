@@ -63,6 +63,6 @@
     files: [arithmetic.txt]
 
 - display: "Summary of Everything"
-  ui_component: "markdown"
+  ui_component: "collapsible-markdown"
   input:
     files: ["summary.md"]

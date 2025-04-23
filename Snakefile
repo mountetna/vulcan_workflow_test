@@ -38,8 +38,6 @@ rule arithmetic:
         method=config["arithmetic_method"],
         add=config["arithmetic_add"],
         multiply=config["arithmetic_multiply"]
-    singularity:
-        "/dscolab/vulcan/containers/archimedes-py.sif"
     run:
         with open(input.poem_count, "r") as f:
             count1 = int(f.read().strip())
@@ -71,8 +69,6 @@ rule summary:
         multiply=config["arithmetic_multiply"]
     output:
         "output/summary.md"
-    singularity:
-        "/dscolab/vulcan/containers/archimedes-py.sif"
     run:
         with open(output[0], "w") as f:
             f.write(f"# Summary\n\n")

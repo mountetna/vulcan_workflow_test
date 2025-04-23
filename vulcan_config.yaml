@@ -1,3 +1,4 @@
+# Params
 - display: "Poems__First Poem"
   ui_component: "string"
   doc: "text of the first poem"
@@ -11,16 +12,41 @@
   output:
     params: ["poem_2"]
 
-- display: "count selector to perform on files"
-  name: "ui_count_method"
+- display: "Counting__What to count"
   ui_component: "dropdown"
-  doc: "Select what to count"
+  doc: "Select how to count"
   default: "chars"
   input:
-    files: ["method_options.txt"]
+    preset:
+      options: ["bytes", "counts", "words"]
   output:
-    files: ["count_method.txt"]
+    params: ["count_method"]
 
+- display: "Additional_Work__additional arithmetic to perform"
+  ui_component: "dropdown"
+  doc: "Select whether additional math should be applied to counted values"
+  default: "Sum only"
+  input:
+    preset:
+      options: ["Sum only", "Sum, then add a value", "Sum, then multiply"]
+  output:
+    params: ["arithmetic_method"]
+
+- display: "Additional_Work__value_to_add"
+  ui_component: "int"
+  default: 2
+  output:
+    params: ["arithmetic_add"]
+
+- display: "Additional_Work__value_to_multiply"
+  ui_component: "int"
+  default: 3
+  output:
+    params: ["arithmetic_multiply"]
+
+# Input Steps - None
+
+# Outputs
 - display: "Count from First Poem"
   ui_component: "raw"
   input:
@@ -31,7 +57,12 @@
   input:
     files: ["count_poem_2.txt"]
 
-- display: "Download First Poem Count"
-  ui_component: "link"
+- display: "Arithmetic Result"
+  ui_component: "raw"
   input:
-    files: ["count_poem_2.txt"]
+    files: [arithmetic.txt]
+
+- display: "Summary of Everything"
+  ui_component: "markdown"
+  input:
+    files: ["summary.md"]

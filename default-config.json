@@ -1,5 +1,9 @@
 {
-  "poem": "hello hello!",
-  "poem_2": ""
+  "poem": null,
+  "poem_2": null,
+  "count_method": null,
+  "arithmetic_method": null,
+  "arithmetic_add": null,
+  "arithmetic_multiply": null
 }
 

@@ -58,11 +58,10 @@ rule summary:
     input:
         poem_count="output/count_poem.txt",
         poem_count_2="output/count_poem_2.txt",
-        arithmetic="output/arithmetic.txt",
-        checker="output/check.txt"
+        arithmetic="output/arithmetic.txt"
     params:
-        poem1=config["poem"],
-        poem2=config["poem_2"],
+        poem=config["poem"],
+        poem_2=config["poem_2"],
         count_method=config["count_method"],
         arithmetic_method=config["arithmetic_method"],
         add=config["arithmetic_add"],

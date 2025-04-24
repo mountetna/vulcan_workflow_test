@@ -1,18 +1,18 @@
 # Params
-- display: "Poems__First Poem"
-  ui_component: "string"
+- display: "1__Poems__First Poem"
+  ui_component: "multiline-string"
   doc: "text of the first poem"
   default: "hello hello!"
   output:
     params: ["poem"]
 
-- display: "Poems__Second Poem"
-  ui_component: "string"
+- display: "1__Poems__Second Poem"
+  ui_component: "multiline-string"
   doc: "text of the second poem"
   output:
     params: ["poem_2"]
 
-- display: "Counting__What to count"
+- display: "2__Counting__What to count"
   ui_component: "dropdown"
   doc: "Select how to count"
   default: "chars"
@@ -22,7 +22,7 @@
   output:
     params: ["count_method"]
 
-- display: "Additional_Work__additional arithmetic to perform"
+- display: "3__Additional_Work__additional arithmetic to perform"
   ui_component: "dropdown"
   doc: "Select whether additional math should be applied to counted values"
   default: "Sum only"
@@ -32,13 +32,13 @@
   output:
     params: ["arithmetic_method"]
 
-- display: "Additional_Work__value_to_add"
+- display: "3__Additional_Work__value_to_add"
   ui_component: "int"
   default: 2
   output:
     params: ["arithmetic_add"]
 
-- display: "Additional_Work__value_to_multiply"
+- display: "3__Additional_Work__value_to_multiply"
   ui_component: "int"
   default: 3
   output:

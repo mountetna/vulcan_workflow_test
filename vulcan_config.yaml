@@ -66,3 +66,8 @@
   ui_component: "collapsible-markdown"
   input:
     files: ["summary.md"]
+
+- display: "Download Summary of Everything"
+  ui_component: "link"
+  input:
+    files: ["summary.md"]

@@ -36,7 +36,7 @@ rule id_characters:
         all_chars="output/all_chars.txt"
     shell:
         """
-        echo {params.poem}{params.poem_2} | grep -o . | sort -u > {output.all_chars}
+        echo {params.poem1}{params.poem2} | grep -o . | sort -u > {output.all_chars}
         """
 
 rule pick_characters: #UI

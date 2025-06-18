@@ -45,6 +45,12 @@
     params: ["arithmetic_multiply"]
 
 # Input Steps - None
+- display: "Individual characters to count"
+  ui_component: "multiselect-string"
+  input:
+    files: ["all_chars.txt"]
+  output:
+    files: ["chars_to_count.json"]
 
 # Outputs
 - display: "Count from First Poem"

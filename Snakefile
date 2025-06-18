@@ -52,7 +52,7 @@ rule count_selected_characters:
         poem1=config["poem"],
         poem2=config["poem_2"],
     input:
-        chars="output/chars_to_count.txt"
+        chars="output/chars_to_count.json"
     output:
         ["output/poem_1_selected_char_count.txt", "output/poem_2_selected_char_count.txt"]
     run:
@@ -100,7 +100,7 @@ rule summary:
         poem_2_count="output/count_poem_2.txt",
         poem_1_char_count="output/poem_1_selected_char_count.txt",
         poem_2_char_count="output/poem_2_selected_char_count.txt",
-        chars="output/chars_to_count.txt",
+        chars="output/chars_to_count.json",
         arithmetic="output/arithmetic.txt"
     params:
         poem=config["poem"],

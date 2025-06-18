@@ -46,6 +46,7 @@
 
 # Input Steps - None
 - display: "Individual characters to count"
+  name: pick_characters
   ui_component: "multiselect-string"
   input:
     files: ["all_chars.txt"]

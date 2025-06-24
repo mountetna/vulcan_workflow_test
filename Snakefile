@@ -34,10 +34,11 @@ rule id_characters:
         poem2=config["poem_2"]
     output:
         all_chars="output/all_chars.txt"
-    shell:
-        """
-        echo {params.poem1}{params.poem2} | grep -o . | sort -u > {output.all_chars}
-        """
+    run:
+        import json
+        text=params.poem1.strip() + params.poem2.strip()
+        with open(output.all_chars, 'w') as output_file:
+            output_file.write(json.dumps(sorted(set(text))))
 
 rule pick_characters: #UI
     input:
@@ -65,8 +66,8 @@ rule count_selected_characters:
             count = sum([counts[char] for char in chars])
             with open(out, "w") as f:
                 f.write(str(count))
-        do_count(param.poem1, output[0])
-        do_count(param.poem1, output[2])
+        do_count(params.poem1, output[0])
+        do_count(params.poem2, output[1])
 
 rule arithmetic:
     input:

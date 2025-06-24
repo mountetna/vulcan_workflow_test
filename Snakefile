@@ -36,7 +36,7 @@ rule id_characters:
         all_chars="output/all_chars.txt"
     run:
         import json
-        text={params.poem1}.read().strip() + {params.poem2}.read().strip()
+        text=params.poem1.strip() + params.poem2.strip()
         with open(output.all_chars, 'w') as output_file:
             output_file.write(json.dumps(sorted(set(text))))
 
@@ -66,8 +66,8 @@ rule count_selected_characters:
             count = sum([counts[char] for char in chars])
             with open(out, "w") as f:
                 f.write(str(count))
-        do_count(param.poem1, output[0])
-        do_count(param.poem1, output[2])
+        do_count(params.poem1, output[0])
+        do_count(params.poem2, output[1])
 
 rule arithmetic:
     input:

@@ -36,7 +36,7 @@ rule id_characters:
         all_chars="output/all_chars.txt"
     run:
         import json
-        text=open(param.poem1).read().strip() + open(param.poem2).read().strip()
+        text=open(params.poem1).read().strip() + open(params.poem2).read().strip()
         with open(output.all_chars, 'w') as output_file:
             output_file.write(json.dumps(sorted(set(text))))
 

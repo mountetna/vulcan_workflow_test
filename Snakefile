@@ -34,10 +34,11 @@ rule id_characters:
         poem2=config["poem_2"]
     output:
         all_chars="output/all_chars.txt"
-    shell:
-        """
-        echo {params.poem1}{params.poem2} | grep -o . | sort -u > {output.all_chars}
-        """
+    run:
+        import json
+        text=open(param.poem1).read().strip() + open(param.poem2).read().strip()
+        with open(output.all_chars, 'w') as output_file:
+            output_file.write(json.dumps(sorted(set(text))))
 
 rule pick_characters: #UI
     input:

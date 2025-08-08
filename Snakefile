@@ -9,10 +9,10 @@ rule vignette:
         vignette_source="resources/vignette.md"
     output:
         vignette_path="output/vignette.md"
-    shell:
-    """
-    cat {input.vignette_source} > {output.vignette_path}
-    """
+    run:
+        with open(output[0], "w") as f:
+            with open(input[0], "r") as i:
+                f.write(str(i.read()))
 
 rule count:
     params:

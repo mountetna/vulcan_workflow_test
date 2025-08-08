@@ -9,7 +9,7 @@ rule vignette:
         vignette_source="resources/vignette.md",
     output:
         vignette_path="output/vignette.md"
-    sheel:
+    shell:
     """
     cp {input.vignette_source} {output.vignette_path}
     """

@@ -6,12 +6,12 @@ rule all:
 
 rule vignette:
     input:
-        vignette_source="resources/vignette.md",
+        vignette_source="resources/vignette.md"
     output:
         vignette_path="output/vignette.md"
     shell:
     """
-    cp {input.vignette_source} {output.vignette_path}
+    cat {input.vignette_source} > {output.vignette_path}
     """
 
 rule count:

@@ -47,6 +47,11 @@
 # Input Steps - None
 
 # Outputs
+- display: "Get vignette"
+  ui_component: "collapsible-markdown"
+  input:
+    files: ["vignette.md"]
+
 - display: "Count from First Poem"
   ui_component: "raw"
   input:

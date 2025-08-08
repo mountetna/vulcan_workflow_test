@@ -2,7 +2,17 @@ configfile: "config.yaml"
 
 rule all:
     input:
-        ["output/count_poem.txt", "output/count_poem_2.txt", "output/summary.md"]
+        ["output/count_poem.txt", "output/count_poem_2.txt", "output/summary.md", "output/vignette.md"]
+
+rule vignette:
+    input:
+        vignette_source="resources/vignette.md",
+    output:
+        vignette_path="output/vignette.md"
+    sheel:
+    """
+    cp {input.vignette_source} {output.vignette_path}
+    """
 
 rule count:
     params:

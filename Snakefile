@@ -114,10 +114,11 @@ rule summary:
         "output/summary.md"
     run:
         import json
+        str_sep="', '"
         with open(output[0], "w") as f:
             f.write(f"# Summary\n\n")
             f.write(f"Initial counting by: {params.count_method}\n\n")
-            f.write(f"Selected character counting on: '{'\', \''.join(json.load(open(input.chars)))}'\n\n")
+            f.write(f"Selected character counting on: '{str_sep.join(json.load(open(input.chars)))}'\n\n")
             f.write(f"### Poem 1\n\n")
             f.write(f"Contents:\n\n```\n")
             f.write(f"{params.poem}")
